@@ -47,6 +47,17 @@ services:
     ports: []
     command: /start-celeryworker
 
+  celerybeat:
+    <<: *django
+    image: news_feed_content_local_celerybeat
+    container_name: news_feed_content_local_celerybeat
+    depends_on:
+      - django  # due to dependency on migrations
+      - redis
+      - mysql
+    ports: [ ]
+    command: /start-celerybeat
+
   flower:
     <<: *django
     image: news_feed_content_local_flower

@@ -1,6 +1,7 @@
 import os
 
 from celery import Celery
+from celery.schedules import crontab
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 
@@ -19,6 +20,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     "fetch-content-metadata-from-api": {
         "task": "config.tasks.fetch_content_metadata",
-        "schedule": crontab(minute=12, hour=35),  # noqa
+        "schedule": crontab(minute=45, hour=12),  # noqa
     },
 }
