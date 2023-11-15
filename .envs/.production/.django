@@ -1,0 +1,40 @@
+# General
+# ------------------------------------------------------------------------------
+DJANGO_READ_DOT_ENV_FILE=True
+DJANGO_SETTINGS_MODULE=config.settings.production
+DJANGO_SECRET_KEY=WWgG9ifHg1NpdtLYeDLrD46qavMLJb5AoGf8K3o4yaJP7qNkzt2szkYWqk88rRfq
+DJANGO_ADMIN_URL=admin/
+DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
+REDIS_CACHE_EXPIRY=864000
+AUTH_SERVICE_URL=http://host.docker.internal:8000
+
+# Database
+# ------------------------------------------------------------------------------
+DATABASE_URL=mysql://root:password@mysql:3306/news_feed_content
+
+# Security
+# ------------------------------------------------------------------------------
+# TIP: better off using DNS, however, redirect is OK too
+DJANGO_SECURE_SSL_REDIRECT=False
+
+# Gunicorn
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4
+
+# Create a superuser account on application start-up
+# ------------------------------------------------------------------------------
+SUPERUSER_USERNAME=madhavank@who.int
+SUPERUSER_EMAIL=madhavank@who.int
+SUPERUSER_PASSWORD=ktAzGwj4y881gn0X
+
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+CELERY_BROKER_URL=redis://redis:6379/0
+
+# Celery
+# ------------------------------------------------------------------------------
+
+# Flower
+CELERY_FLOWER_USER=debug
+CELERY_FLOWER_PASSWORD=debug

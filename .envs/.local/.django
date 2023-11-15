@@ -1,0 +1,22 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+REDIS_CACHE_EXPIRY=864000
+AUTH_SERVICE_URL=http://host.docker.internal:8000
+
+# Database
+# ------------------------------------------------------------------------------
+DATABASE_URL=mysql://dev_usr:password@mysql:3306/news_feed_content
+TEST_DATABASE_URL=mysql://root:password@mysql:3306/test_news_feed_content
+
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+CELERY_BROKER_URL=redis://redis:6379/0
+
+# Celery
+# ------------------------------------------------------------------------------
+
+# Flower
+CELERY_FLOWER_USER=debug
+CELERY_FLOWER_PASSWORD=debug

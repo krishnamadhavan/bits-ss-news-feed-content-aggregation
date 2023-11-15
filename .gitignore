@@ -326,7 +326,6 @@ tags
 .pytest_cache/
 .ipython/
 .env
-.envs/*
 
 # celery beat schedule file
 celerybeat-schedule
