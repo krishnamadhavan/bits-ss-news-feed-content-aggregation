@@ -1,0 +1,29 @@
+# Python
+# ------------------------------------------------------------------------------
+pytz==2022.2.1  # https://github.com/stub42/pytz
+argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
+mysqlclient==2.1.1  # https://github.com/PyMySQL/mysqlclient-python
+whitenoise==6.2.0  # https://github.com/evansd/whitenoise
+uvicorn[standard]==0.18.3  # https://github.com/encode/uvicorn
+PyJWT==2.6.0  # https://pypi.org/project/PyJWT/
+cryptography==38.0.4  # https://pypi.org/project/cryptography/
+
+# Django
+# ------------------------------------------------------------------------------
+django==3.2.15  # pyup: < 4.0  # https://www.djangoproject.com/
+django-environ==0.9.0  # https://github.com/joke2k/django-environ
+# Django REST Framework
+djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
+django-cors-headers==3.13.0 # https://github.com/adamchainz/django-cors-headers
+# DRF-spectacular for api documentation
+drf-spectacular==0.24.2  # https://github.com/tfranzel/drf-spectacular
+# JWT authentication
+djoser==2.2.2  # https://pypi.org/project/djoser/
+djangorestframework-simplejwt==5.3.0  # https://pypi.org/project/djangorestframework-simplejwt/
+
+# Message Broker
+# ------------------------------------------------------------------------------
+celery==5.2.7  # https://github.com/celery/celery
+django-redis==5.2.0  # https://github.com/jazzband/django-redis
+flower==1.2.0  # https://github.com/mher/flower
+redis==4.3.4  # https://github.com/redis/redis-py

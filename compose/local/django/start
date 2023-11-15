@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+python manage.py collectstatic --noinput
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+# A custom management command to create a superuser if not exists already.
+python manage.py createadminuser
+
+uvicorn config.asgi:application --host 0.0.0.0 --reload --reload-include '*.html'
