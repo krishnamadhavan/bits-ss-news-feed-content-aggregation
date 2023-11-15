@@ -14,3 +14,11 @@ app.config_from_object("django.conf:settings", namespace="CELERY")
 
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
+
+# https://docs.celeryq.dev/en/main/userguide/periodic-tasks.html#available-fields
+app.conf.beat_schedule = {
+    "fetch-content-metadata-from-api": {
+        "task": "config.tasks.fetch_content_metadata",
+        "schedule": crontab(minute=12, hour=35),  # noqa
+    },
+}

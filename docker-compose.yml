@@ -18,6 +18,8 @@ services:
     ports:
       - "8001:8000"
     command: /start
+    stdin_open: true
+    tty: true
 
   mysql:
     image: mysql:5.7.31
