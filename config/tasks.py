@@ -61,14 +61,14 @@ def fetch_content_metadata() -> bool:
     queryset = models.ContentProviders.objects.all()
 
     for instance in queryset:
-        endpoint = instance.endpoint
+        endpoint_url = instance.endpoint_url
 
         # Triggering separate tasks for each partner API, making concurrent requests
         # which reduces runtime and makes use of multiple workers at the same.
         # As the no. of APIs (partners) increases, we can increase the no. of celery
         # workers.
         call_api_and_insert_data_into_db.delay(
-            provider_id=instance.pk, method="GET", url=endpoint, headers={}
+            provider_id=instance.pk, method="GET", url=endpoint_url, headers={}
         )
 
     return True
@@ -146,7 +146,7 @@ def call_api_and_insert_data_into_db(
                 title=result["title"],
                 short_description=result.get("short_description", None),
                 about=result.get("about", None),
-                image_url=result["media"]["image"]["raw"],
+                image_url=result["image_url"],
                 external_content_url=result.get("external_content_url", None),
             )
         )

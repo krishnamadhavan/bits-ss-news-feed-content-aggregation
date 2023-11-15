@@ -20,6 +20,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     "fetch-content-metadata-from-api": {
         "task": "config.tasks.fetch_content_metadata",
-        "schedule": crontab(minute=45, hour=12),  # noqa
+        "schedule": crontab(minute=25, hour=13),  # noqa
     },
 }

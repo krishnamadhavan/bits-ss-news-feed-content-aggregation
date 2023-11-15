@@ -65,6 +65,7 @@ DJANGO_APPS = [
     "django.contrib.admin",
 ]
 THIRD_PARTY_APPS = [
+    "django_celery_beat",
     "rest_framework",
     "djoser",
     "corsheaders",
